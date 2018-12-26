@@ -492,18 +492,18 @@
 			<item group="palletPackaging_sm" prob="0.05" />
 		</lootgroup>
 
-		<lootcontainer id="208" count="0,1" size="8,9" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
+		<lootcontainer id="208" count="0,1" size="6,8" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
 			<item group="pwbwp" prob="0.05" />
 		</lootcontainer>
 
-		<lootcontainer id="209" count="0,1" size="8,9" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
+		<lootcontainer id="209" count="0,1" size="6,8" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
 			<item group="pbbwp" prob="0.05" />
 		</lootcontainer>
-		<lootcontainer id="210" count="0,1" size="8,9" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
+		<lootcontainer id="210" count="0,1" size="6,8" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
 			<item group="palletBricks" prob="0.05" />
 		</lootcontainer>
 		
-		<lootcontainer id="211" count="0,1" size="8,9" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
+		<lootcontainer id="211" count="0,1" size="6,8" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
 			<item group="pbtwp" prob="0.05" />
 		</lootcontainer>
 

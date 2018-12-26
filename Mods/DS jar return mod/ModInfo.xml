@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
 	<ModInfo>
-		<Name value="DS Changes" />
-		<Description value="various changes I use on my server" />
+		<Name value="DS jar return mod" />
+		<Description value=" returns jars to you after consuming foods made with them." />
 		<Author value="DorenSnow" />
 		<Version value="1.0" />
 		<Website value="" />
