@@ -1,0 +1,13 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+meleeWoodStick,items,Melee,KgNone,Wooden Stick,,Spitzer Stock,,,
+meleeWoodStickDesc,items,Melee,KgNone,can pick in someones face or use it as base for Spear Heads.\nRepair with Wood.,,,,
+meleeJian,items,Melee,KgNone,Jian,,Jian,,,
+meleeJianDesc,items,Melee,KgNone,a sword as in that movie.\nRepair with Forged Steel.,,,,
+meleeShortSword,items,Melee,KgNone,Short sword,,Kurzschwert,,,
+meleeShortSwordDesc,items,Melee,KgNone,a simple sword too do what you do with a sword.\nRepair with Forged Iron.,,,,
+modStoneSpear,item_modifiers,mod,New,Stone Spearhead,,Speerspitze aus Stein,,
+modStoneSpearDesc,item_modifiers,mod,New,mount it on a wooden stick and then kill something.,,,
+modIronSpear,item_modifiers,mod,New,Iron Spearhead,,eiserne Speerspitze,,,
+modIronSpearDesc,item_modifiers,mod,New,mount it on a wooden stick and then kill something.,,,
+modSteelSpear,item_modifiers,mod,New,Steel Spearhead,,stählerne Speerspitze,,,
+modSteelSpearDesc,item_modifiers,mod,New,mount it on a wooden stick and then kill something.,,,,

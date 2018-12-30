@@ -1,0 +1,36 @@
+<MeleebyEntenwerfer>
+	<append xpath="/recipes" >
+		<!-- <recipe name="modBeanCanBat" count="1" craft_area="workbench" tags="learnable">
+			<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
+			<ingredient name="resourceForgedSteel" count="5"/>
+			<ingredient name="resourceGlue" count="5"/>
+			<ingredient name="resourceMechanicalParts" count="5"/>
+			<ingredient name="resourceSpring" count="10"/>
+		</recipe> -->
+		<recipe name="modStoneSpear" count="1" >
+			<ingredient name="resourceRockSmall" count="10"/>
+		</recipe>
+
+		<recipe name="modIronSpear" count="1" >
+			<ingredient name="resourceScrapIron" count="22"/>
+		</recipe>
+
+		<recipe name="modSteelSpear" craft_area="workbench" count="1">
+			<ingredient name="resourceForgedSteel" count="10"/>
+		</recipe>
+
+		<recipe name="meleeWoodStick" count="1" >
+			<ingredient name="resourceWood" count="10"/>
+		</recipe>
+
+		<recipe name="meleeJian" craft_area="workbench" count="1">
+			<ingredient name="resourceForgedSteel" count="15"/>
+			<ingredient name="resourceWood" count="10"/>
+		</recipe>
+
+		<recipe name="meleeShortSword" craft_area="workbench" count="1">
+			<ingredient name="resourceForgedIron" count="12"/>
+			<ingredient name="resourceWood" count="10"/>
+		</recipe>
+	</append>
+</MeleebyEntenwerfer>

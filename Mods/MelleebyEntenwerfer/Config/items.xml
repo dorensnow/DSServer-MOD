@@ -1,0 +1,190 @@
+ <MeleebyEntenwerfer>
+	
+		<append xpath="/items">	
+			<item name="meleeWoodStick">	
+			<property name="Tags" value="spear,melee,weapon,perkStayDown,meleeWeapon,grip,head,pommel,sweetspot"/>
+			<property name="Meshfile" value="#@modfolder:Resources/WoodStick.unity3d?WoodStick_X" /> 
+			<property name="HandMeshfile" value="#@modfolder:Resources/WoodStick.unity3d?WoodStick_X"/> 
+			<property name="CustomIcon" value="meleeWoodStick" />
+			<property name="DisplayType" value="melee"/>
+			<property name="HoldType" value="18"/>  <!-- 18-->
+			<property name="Material" value="Mwood"/>
+			<property name="RepairTools" value="resourceWood"/>
+			<property name="DegradationBreaksAfter" value="true"/>
+			<property name="Group" value="Ammo/Weapons"/>
+			<property name="ActionSkillGroup" value="attAgility"/>
+			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value="0.15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value="0.15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="swoosh"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+			</property>
+
+			<effect_group name="Base Effects">
+				<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.2"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="11"/> 
+				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/> <!-- A16 1.2 -->
+				<passive_effect name="StaminaLoss" operation="base_set" value="11" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="300,800" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+			</effect_group>
+
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.4" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="2" tags="secondary"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".2" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_add" value="16" tags="secondary"/>
+
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+					<requirement name="IsMale" target="self"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+					<requirement name="IsMale" target="self" invert="true"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+
+		<item name="meleeJian">	
+			<property name="Tags" value="sword,knife,perkDeepCuts,melee,weapon,meleeWeapon,shaft,grip,head,pommel,sweetspot,notbraced"/>
+			<property name="Meshfile" value="#@modfolder:Resources/Jian.unity3d?Jian_X" /> <!-- CC 4.0 Licenced model by Gravity jack -->
+			<property name="HandMeshfile" value="#@modfolder:Resources/Jian.unity3d?Jian_X"/> 
+			<property name="CustomIcon" value="meleeJian" />
+			<property name="DisplayType" value="melee"/>
+			<property name="HoldType" value="47"/> 
+			<property name="Material" value="Mmetal"/>
+			<property name="RepairTools" value="resourceForgedSteel"/>
+			<property name="DegradationBreaksAfter" value="true"/>
+			<property name="Group" value="Ammo/Weapons"/>
+			<property name="ActionSkillGroup" value="Blade Weapons"/>
+			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value="0.15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="swoosh"/>
+				<property name="ToolCategory.harvestingTools" value=".4" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4"/>
+				<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value="0.15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="swoosh"/>
+				<property name="ToolCategory.harvestingTools" value=".4" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4"/>
+				<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+			</property>
+
+			<effect_group name="Base Effects">
+				<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="23"/> <!-- meleeToolMachete -->
+				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/> <!-- A16 1.2 -->
+				<passive_effect name="HarvestCount" operation="base_set" value=".4" tags="butcherHarvest"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="9" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="300,800" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.7" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="2" tags="secondary"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_add" value="16" tags="secondary"/>
+
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+					<requirement name="IsMale" target="self"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+					<requirement name="IsMale" target="self" invert="true"/>
+				</triggered_effect>
+
+			</effect_group>
+			</item>
+			<item name="meleeShortSword">
+				<property name="Tags" value="sword,knife,perkDeepCuts,melee,weapon,meleeWeapon,shaft,grip,head,pommel,sweetspot,notbraced"/>
+				<property name="Meshfile" value="#@modfolder:Resources/ShortSword.unity3d?ShortSword_X" /> <!-- CC 4.0 Licenced model by Gravity jack -->
+				<property name="HandMeshfile" value="#@modfolder:Resources/ShortSword.unity3d?ShortSword_X"/> 
+				<property name="CustomIcon" value="meleeShortSword" />
+				<property name="HoldType" value="47"/> 
+				<property name="Material" value="Mmetal"/>
+				<property name="RepairTools" value="resourceForgedIron"/>
+				<property name="DegradationBreaksAfter" value="true"/>
+				<property name="Group" value="Ammo/Weapons"/>
+				<property name="ActionSkillGroup" value="Blade Weapons"/>
+				<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value="0.15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="swoosh"/>
+				<property name="ToolCategory.harvestingTools" value=".4" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4"/>
+				<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value="0.15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="swoosh"/>
+				<property name="ToolCategory.harvestingTools" value=".4" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4"/>
+				<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+			</property>
+
+				<effect_group name="Base Effects">
+					<passive_effect name="MaxRange" operation="base_set" value="2.1"/>
+					<passive_effect name="BlockRange" operation="base_set" value="3"/>
+					<passive_effect name="EntityDamage" operation="base_set" value="20"/> <!-- meleeClubWood -->
+					<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+					<passive_effect name="AttacksPerMinute" operation="base_set" value="54" tags="primary"/>
+					<passive_effect name="HarvestCount" operation="base_set" value=".4" tags="butcherHarvest"/>
+					<passive_effect name="StaminaLoss" operation="base_set" value="10" tags="primary"/>
+					<passive_effect name="DegradationMax" operation="base_set" value="300,1500" tier="1,6"/>
+					<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+					<passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/>
+					<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+				</effect_group>
+				<effect_group name="Power Attack">
+					<passive_effect name="EntityDamage" operation="perc_add" value="1.3" tags="secondary"/>
+					<passive_effect name="BlockDamage" operation="perc_add" value="2" tags="secondary"/>
+					<passive_effect name="AttacksPerMinute" operation="perc_add" value="0" tags="secondary"/>
+					<passive_effect name="StaminaLoss" operation="base_add" value="15" tags="secondary"/>
+					<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+						<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="50"/>
+						<requirement name="IsMale" target="self"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+						<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="50"/>
+						<requirement name="IsMale" target="self" invert="true"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfSecondaryActionStart" action="AddJournalEntry" journal="powerAttackTip"/>
+				</effect_group>
+			</item>
+		</append>
+</MeleebyEntenwerfer>
