@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="ZombieHealthBar" />
+		<Description value="makes the zombie health bar show when you target them" />
+		<Author value="DorenSnow" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>

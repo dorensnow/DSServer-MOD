@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="DorenSolarPower" />
+		<Description value="Adds ability to craft Solar Banks and Cells" />
+		<Author value="DorenSnow" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>
