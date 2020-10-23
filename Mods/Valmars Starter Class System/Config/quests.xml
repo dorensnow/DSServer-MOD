@@ -684,7 +684,7 @@
 	<!-- BRUISER -->
 	<quest id="challenge_bruiser1" group_name_key="quest_bruiser" name="Bruiser Quest" subtitle="Bruiser Challenge" description="Bust zombie skulls" icon="ui_game_symbol_club" 
 		repeatable="false" category_key="challenge" offer="Hulk smash..." difficulty="easy">
-		<requirement type="Holding" id="meleeWpnKnucklesT3SteelKnuckles" />
+		<requirement type="Holding" id="meleeWpnKnucklesT1IronKnuckles" />
 		<objective type="ZombieKill" value="15" />
 		<reward type="Quest" id="bruiser_visit_trader" />
 	</quest>
